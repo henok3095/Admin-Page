@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import MetricsCard from "../components/MetricsCard";
 import FeedbackTable from "../components/FeedbackTable";
 
 const FeedbackPage = () => {
@@ -35,11 +34,11 @@ const FeedbackPage = () => {
   ]);
 
   const handleSubmitFeedback = () => {
-    alert("Feedback form opened"); // Replace with modal or form later
+    alert("Feedback form opened");
   };
 
   return (
-    // Gradient background for depth
+    
     <div className="flex-1 ml-64 p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-gray-900 to-gray-800 text-white min-h-screen">
       {/* Animated title with modern font */}
       <motion.h1
@@ -67,12 +66,10 @@ const FeedbackPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: index * 0.1 }}
+            className="p-4 bg-gray-800/80 rounded-lg shadow-md border border-gray-700/50"
           >
-            <MetricsCard
-              title={metric.title}
-              value={metric.value}
-              color={metric.color}
-            />
+            <h3 className={`text-lg font-semibold ${metric.color}`}>{metric.title}</h3>
+            <p className="text-xl font-bold">{metric.value}</p>
           </motion.div>
         ))}
       </motion.div>
