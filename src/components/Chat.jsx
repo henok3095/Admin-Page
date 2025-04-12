@@ -95,7 +95,7 @@ const Chat = () => {
         <h2 className="text-xl font-semibold text-gray-100 mb-4">Conversations</h2>
         <div className="space-y-3">
           {users.map((user, index) => (
-            // Animated user row
+            
             <motion.div
               key={user.id}
               initial={{ opacity: 0, x: -20 }}
